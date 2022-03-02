@@ -1,0 +1,42 @@
+@import 'variables'
+
+
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  border-radius: $radius
+  background-clip: padding-box
+
+
+@mixin box-shadow($left, $top, $blur, $color, $inset: false)
+  @if $inset
+    -webkit-box-shadow: inset $left $top $blur $color
+    -moz-box-shadow: inset $left $top $blur $color
+    box-shadow: inset $left $top $blur $color
+  @else
+    -webkit-box-shadow: $left $top $blur $color
+    -moz-box-shadow: $left $top $blur $color
+    box-shadow: $left $top $blur $color
+
+
+@mixin transition($transition...)
+  -moz-transition: $transition
+  -o-transition: $transition
+  -webkit-transition: $transition
+  transition: $transition
+
+
+@mixin border-radius-default
+  @include border-radius($border-radius)
+
+
+@mixin transition-default($prop)
+  @include transition($prop 0.1s ease-in-out)
+
+
+@mixin box-shadow-default
+  @include box-shadow(0, 6px, 15px, $color-shadow)
+
+
+@mixin for-mobile
+  @media (max-width: $breakpoint-small - 1px)
+    @content

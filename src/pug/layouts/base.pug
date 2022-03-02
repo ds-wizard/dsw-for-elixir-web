@@ -1,0 +1,42 @@
+block config
+
+doctype html
+html(lang='en', dir='ltr')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, viewport-fit=cover')
+
+        // TODO Favicon
+
+        // OG and other meta tags
+        meta(property='og:site_name', content='DSW Cloud for ELIXIR')
+        meta(property='og:title', content=(title || 'DSW Cloud for ELIXIR'))
+        if description
+            meta(property='og:description', content=description)
+            meta(name='description', content=description)
+
+        // Links
+        if canonical !== undefined
+            link(rel='canonical', href=`https://elixir-ds-wizard.org/${canonical}`)
+
+        // Styles
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap', rel='stylesheet')
+        link(href='/style.css', rel='stylesheet')
+
+        // Scripts
+        script(async, src='/script.js')
+        block scripts
+
+        // Title
+        if title
+            title #{title} | DSW Cloud for ELIXIR
+        else
+            title DSW Cloud for ELIXIR
+
+    body(class=bodyClass || '')
+        include ../components/header
+
+        div(class='Content')
+            block content
+
+        include ../components/footer

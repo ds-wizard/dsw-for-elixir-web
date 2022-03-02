@@ -1,0 +1,33 @@
+extends ../layouts/base.pug
+
+block config
+    - const title = 'Contact'
+
+
+block content
+    h2 Contact
+
+    table.contact-table
+        tbody
+            tr
+                th Email
+                td
+                    a(href='mailto:info@ds-wizard.org') info@ds-wizard.org
+
+            tr
+                th Address
+                td Czech Technical University in Prague, Faculty of Information Technology
+                    br
+                    | Thákurova 9
+                    br
+                    | 160&nbsp;00 Praha 6
+                    br
+                    | Czech Republic
+
+            tr
+                th Bug reporting
+                td
+                    a(href='https://github.com/ds-wizard/ds-wizard/issues', target='blank_') GitHub
+            tr
+                th Personal data protection
+                td The data subject may apply for the rights to the personal data controller (FIT CTU) via e-mail to the address info@ds-wizard.org.

@@ -1,0 +1,31 @@
+extends ../layouts/base.pug
+
+
+block config
+    - const canonical = ''
+
+
+block content
+    .Cols
+        div
+            p.bigger Data Stewardship Wizard is an open-source tool for smart and FAIR data management planning. ELIXIR DSW Cloud hosts DSW instances primarily for ELIXIR-affiliated researchers, groups, and institutions.
+            a.Button(href='https://ds-wizard.org', target='_blank', rel='noopener') Learn more
+
+        div
+            img(src='/static/dsw-logo-full-color-transparent.svg', alt='Data Stewardship Wizard Logo')
+
+
+
+    .Cols
+        .Card
+            h2 For Researchers
+            p You can always use the latest version of the open-source tool Data Stewardship Wizard as a researcher in ELIXIR DSW Cloud. Log in using ELIXIR AAI and plan your data management in a DSW instance running on the infrastructure provided by ELIXIR and managed by the DSW developers.
+            a.Button(href='https://researchers.ds-wizard.org/') Get started
+        .Card
+            h2 For Institutions
+            p If you represent an ELIXIR Node, Platform, Community, Focus Group, or a research group affiliated with one of the previously mentioned, we can provide you a dedicated instance of DSW in the ELIXIR DSW Cloud where we will manage it for you. Let us know to arrange necessary details.
+            a.Button(href='/contact') Contact us
+
+    div
+        h2 Other Options
+        p In case none of the options above is suitable for you, no worries. There are more options available for individuals, research groups, academic institutions, and enterprises. For more information, visit the #[a(href='https://ds-wizard.org/get-started', target='_blank', rel='noopener') DSW Get Started page].

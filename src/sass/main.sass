@@ -1,0 +1,188 @@
+@import '~normalize.css/normalize.css'
+
+@import 'mixins'
+@import 'variables'
+
+
+body
+  font-family: 'Open Sans', sans-serif
+  font-size: $font-size-text
+  color: $color-text
+  position: relative
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &:before
+    display: block
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    height: 800px
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%)
+    z-index: -2
+
+  &:after
+    display: block
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    height: 20px
+    background: $color-primary
+    z-index: -1
+
+header
+  padding: 8rem 1rem
+
+  h1
+    font-size: $font-size-xl
+    text-align: center
+    margin: 0
+
+    a
+      @include transition-default(color)
+      color: $color-text
+      text-decoration: none
+
+      &:hover
+        color: $color-text-lighter
+
+
+.Content
+  width: 100%
+  max-width: 800px
+  margin: auto
+  padding: 1rem
+  box-sizing: border-box
+  flex-grow: 1
+
+  h2
+    font-size: $font-size-header
+
+.Cols
+  display: grid
+  grid-template-columns: 1fr 1fr
+  column-gap: 2.5rem
+  margin-bottom: 8rem
+
+  @include for-mobile
+    display: block
+
+  div
+    img
+      width: 100%
+
+
+.bigger
+  font-size: $font-size-bigger
+  margin-bottom: 2rem
+
+p, ul, ol
+  line-height: 1.7
+
+a
+  @include transition-default(color)
+  color: $color-primary
+
+  &:hover
+    color: $color-primary-lighter
+
+.Button
+  @include border-radius-default
+  @include transition-default(all)
+  color: $color-primary
+  font-size: $font-size-bigger
+  border: 1px solid $color-primary
+  padding: 0.5rem 2rem
+  text-decoration: none
+  cursor: pointer
+  display: inline-block
+
+  &:hover
+    background: $color-primary
+    color: $color-white
+
+
+.Card
+  @include border-radius-default
+  @include box-shadow-default
+  background: $color-white
+  text-align: center
+  padding: 2.5rem 1.5rem
+
+  h2
+    margin: 0
+
+  p
+    text-align: justify
+    color: $color-text-lighter
+    margin: 2rem 0
+
+
+.footer
+  margin-top: 5rem
+  background: $color-footer
+
+  &-inner
+    width: 100%
+    max-width: 800px
+    margin: auto
+    padding: 1rem
+    box-sizing: border-box
+
+    &-row
+      margin: 2rem auto
+      width: fit-content
+
+      &:not(:last-child)
+        padding-bottom: 2rem
+        border-bottom: 1px solid $color-footer-border
+
+
+  &-icon-list
+    padding: 0
+    margin-bottom: -1.25rem
+
+    li
+      display: inline-block
+      margin-right: 1.25rem
+      margin-bottom: 1.25rem
+
+      a
+        img
+          @include transition-default(opacity)
+          opacity: .5
+          height: 2.5rem
+
+        &:hover
+          img
+            opacity: 1
+
+  a
+    color: $color-text-footer
+
+    &:not(:last-child)
+      margin-right: 1rem
+
+
+
+
+.contact-table
+  width: 100%
+  border-collapse: collapse
+
+  tr
+    td, th
+      padding: 1rem 0
+
+  th
+    vertical-align: top
+    text-align: left
+    width: 15%
+
+    @include for-mobile
+      width: 30%
